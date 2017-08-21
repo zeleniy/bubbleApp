@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="css/page.css" rel="stylesheet" type="text/css" />
+    <link href="css/chart.css" rel="stylesheet" type="text/css" />
+    <link href="css/svg.css" rel="stylesheet" type="text/css" />
+
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/d3-tip/index.js"></script>
+</head>
+<body>
+    <div id="appContainer">
+        <table id="appLayout">
+            <thead>
+                <tr>
+                    <td width="50%"></td>
+                    <td width="25%"><span class="searchFieldLabel">Filter</span></td>
+                    <td width="25%"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="textSearch" type="text" class="longInputField">
+                    </td>
+                    <td>
+                        <select id="caseTypes" class="longInputField"></select>
+                    </td>
+                    <td>
+                        <input type="radio" name="MyOrNotCase" checked><label>All cases</label><br />
+                        <input type="radio" name="MyOrNotCase"><label>Only my firm's cases</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="searchFieldLabel">Sort</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="sortButtons">
+                            <div class="sortButton activeSortButton">The Overall Picture</div>
+                            <div class="sortButton">Judge</div>
+                            <div class="sortButton">County</div>
+                        </div>
+                    </td>
+                    <td><select id="states" class="longInputField"></select></td>
+                    <td><select id="counties" class="longInputField"></select></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3"><div id="separator"></div></td>
+                </tr>
+                <!-- Details container -->
+                <tr id="legalCasesDetailsContainer">
+                    <td colspan="3">
+                        <div>
+                            <div id="caseDetailsHeader">
+                                <div id="caseDetailsBack" class="button">back</div>
+                                <div id="caseDetailsPrint" class="button">print</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div id="caseDetails">
+                                <table cellpadding="10" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="2" align="center">
+                                                <h4 id="caseDetailsTitle"></h4>
+                                                <div id="caseDetailsUnderline"></div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td class="bold-text" width="20%">Result:</td><td id="caseDetailsAmount"></td></tr>
+                                        <tr><td class="bold-text">State:</td><td id="caseDetailsState"></td></tr>
+                                        <tr><td class="bold-text">Court:</td><td id="caseDetailsCourt"></td></tr>
+                                        <tr><td class="bold-text">Judge:</td><td id="caseDetailsJudge"></td></tr>
+                                        <tr><td class="bold-text">Year:</td><td id="caseDetailsYear"></td></tr>
+                                        <tr><td class="bold-text">Case Type:</td><td id="caseDetailsType"></td></tr>
+                                        <tr><td class="bold-text">Injury Summary:</td><td id="caseDetailsInjury"></td></tr>
+                                        <tr><td class="bold-text">Case Summary:</td><td id="caseDetailsSummary"></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Chart container -->
+                <tr id="legalCasesChartContainer">
+                    <td colspan="3" id="legalCasesChart"></td>
+                </tr>
+                <!-- Cases list container -->
+                <tr id="legalCasesListContainer">
+                    <td colspan="3">
+                        <table width="100%" id="legalCasesTable" border="1" cellpadding="10">
+                            <tbody id="legalCasesList">
+                            </tbody>
+                        </table>
+                        <div id="showMore" class="activeButton">Show More</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/dataSet.js"></script>
+    <script src="js/details.js"></script>
+    <script src="js/casesList.js"></script>
+    <script src="js/searchBar.js"></script>
+    <script src="js/casesChart.js"></script>
+    <script src="js/application.js"></script>
+    <script>
+        var application = new Application();
+        application.run();
+    </script>
+</body>
+</html>

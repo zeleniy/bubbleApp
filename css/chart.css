@@ -1,0 +1,186 @@
+#appLayout {
+    width: 100%;
+    font-size: 14px;
+}
+
+#appLayout .searchFieldLabel {
+    font-weight: bold;
+}
+
+#appLayout thead td {
+    padding: 0 10px;
+}
+
+#appLayout .sortButton {
+    float: left;
+    padding: 5px;
+    cursor: pointer;
+    border-right: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+#appLayout .activeSortButton {
+    background-color: #3fc2d8;
+    cursor: default;
+}
+
+#appLayout .sortButton:FIRST-CHILD {
+    border-left: 1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#appLayout .sortButton:LAST-CHILD {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#appLayout #separator {
+    border: 1px solid gray;
+    margin: 20px 0;
+}
+
+#appLayout .textSearch {
+    
+}
+
+.longInputField {
+    width: 100%;
+}
+
+#legalCasesChart {
+    width: 100%;
+    height: 600px;
+}
+
+#legalCasesTable {
+    border-collapse: collapse;
+}
+
+#legalCasesTable tr {
+    border: 1px solid black;
+}
+
+#legalCasesList div {
+    margin: 10px 0;
+}
+
+#showMore {
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: auto auto;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.activeButton {
+    background-color: #3fc2d8;
+    cursor: pointer;
+}
+
+.inactiveButton {
+    background-color: lightgrey;
+    cursor: default;
+}
+
+.caseListActiveItem {
+    background-color: lightgrey;
+}
+
+#legalCasesDetailsContainer {
+    display: none;
+}
+
+#legalCasesDetailsContainer .bold-text {
+    font-weight: bold;
+}
+
+.button {
+    cursor: pointer;
+    border: 1px dotted gray;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: #3fc2d8;
+}
+
+#caseDetailsPrint {
+    float: right;
+}
+
+#caseDetailsBack {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+#caseDetailsUnderline {
+    border: 1px solid #3fc2d8;
+    width: 40%;
+}
+
+.statistics-label {
+    font-size: 0.8em;
+}
+/*
+ * Tool tip styles.
+ */
+.d3-tip {
+    line-height: 1;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+}
